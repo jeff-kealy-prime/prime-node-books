@@ -37,9 +37,9 @@ router.post('/', function(req, res) {
     }
 
     client.query(
-      'INSERT INTO books (title, author, published, genre) ' +
-      'VALUES ($1, $2, $3, $4)',
-      [newBook.title, newBook.author, newBook.published, newBook.genre],
+      'INSERT INTO books (title, author, genre, published, edition, publisher) ' +
+      'VALUES ($1, $2, $3, $4, $5, $6)',
+      [newBook.title, newBook.author, newBook.genre, newBook.published, newBook.edition, newBook.publisher],
       function(err, result) {
         done();
 
